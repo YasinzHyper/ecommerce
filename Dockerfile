@@ -12,12 +12,12 @@ COPY requirements.txt /ecommerce/
 RUN pip install --no-cache-dir -r /ecommerce/requirements.txt
 
 COPY . /ecommerce/
-COPY ../entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENV DJANGO_SUPERUSER_EMAIL=root@email.com
 ENV DJANGO_SUPERUSER_PASSWORD=root
 
 EXPOSE 8000
-RUN sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["python", "sandbox/manage.py", "runserver", "0.0.0.0:8000"]
