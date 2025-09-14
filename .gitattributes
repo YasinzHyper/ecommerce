@@ -1,0 +1,21 @@
+# Ensure shell scripts always use Unix line endings (LF)
+*.sh text eol=lf
+
+# Ensure Docker-related files use Unix line endings
+Dockerfile text eol=lf
+**/Dockerfile* text eol=lf
+
+# Default behavior for other text files
+* text=auto
+
+# Binary files
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.sqlite3 binary
